@@ -21,7 +21,7 @@ GLFWwindow* init(int width, int height)
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	GLFWwindow* window = glfwCreateWindow(width, height, "3D", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(width, height, "Box", NULL, NULL);
 	if (window == NULL)
 	{
 		std::cout << "Failed to create window" << std::endl;
@@ -40,8 +40,11 @@ GLFWwindow* init(int width, int height)
 		return NULL;
 	}
 
-	
+	//Enable lowest z buffer depth testing
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LESS);
 
+	//Normalize view to 0,0
 	glViewport(0, 0, width, height);
 
 	return window;

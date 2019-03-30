@@ -1,6 +1,7 @@
 #include <GLAD/glad.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
+#include <tinyobjloader/tiny_obj_loader.h>
 #include <iostream>
 #include "setup.h"
 #include "OBJloader.h"
